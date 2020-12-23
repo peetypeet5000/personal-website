@@ -24,6 +24,12 @@ p {
     width: 80%;
 }
 
+
+#site-title {
+    text-decoration: none;
+}
+
+
 .content {
     max-width: 1200px;
     margin-left: auto;
