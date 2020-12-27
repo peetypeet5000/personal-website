@@ -29,6 +29,29 @@ p {
     text-decoration: none;
 }
 
+#nav {
+	list-style-type: none;
+	background-color: #ba2d65;
+    margin: 0;
+    padding: 0;
+}
+
+#nav li {
+	display: inline;
+	padding: 10px;
+	margin: 5px;
+}
+
+#nav a {
+	text-decoration: none;
+	color: white;
+	font-size: 2em;
+}
+
+#nav li:hover {
+	background-color: lightcoral;
+}
+
 
 .content {
     max-width: 1200px;

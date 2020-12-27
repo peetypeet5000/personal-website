@@ -1,6 +1,18 @@
-//import modules and ata
+//import modules and
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
 var express = require('express');
 var exphbs = require('express-handlebars');
+
+//grab ssl cert
+var privateKey = fs.readFileSync('cert/server.key', 'utf-8');
+var cert = fs.readFileSync('cert/server.crt', 'utf-8');
+var httpsOptions = {
+	key: privateKey,
+	cert: cert
+};
+
 
 //setup express
 var app = express();
@@ -17,11 +29,25 @@ app.use(express.json());
 //serves static files in /public
 app.use(express.static('public'));
 
+ //redirects http requests to https
+ app.use (function (req, res, next) {
+	if (req.secure) {
+			// request was via https, so do no special handling
+			next();
+	} else {
+			// request was via http, so redirect to https
+			res.redirect('https://' + req.headers.host + req.url);
+	}
+});
+
+/**********************
+ * MIDDLEWARE FUNCTIONS*
+ **********************/
 
 //serve the main page
 app.get('/', function (req, res) {
 	res.status(200).render('index', {
-		title: "Index - Peter LaMontagne"
+		title: "Index - Peter LaMontagne",
 	});
 });
 
@@ -34,10 +60,16 @@ app.get('*', function (req, res) {
 	});
 });
 
-
+//create servers
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(httpsOptions, app);
 
 //start the server
-const server = app.listen(port, function () {
-	console.log("== Server is listening on port", port);
+httpServer.listen(80, function () {
+	console.log("== HTTP Server is listening on port", 80);
+});
+
+httpsServer.listen(443, function () {
+	console.log("== HTTPS Server is listening on port", 443);
 });
 
