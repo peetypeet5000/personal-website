@@ -1,20 +1,20 @@
 h1 {
-    width: 60%;
-    border-bottom: 5px solid #ba2d65;
+    width: 1000px;
     color: white;
     margin-left: auto;
     margin-right: auto;
+    
 } 
 
 header {
     background-color: #f06292;
-    width: 100%;
-    padding: 10px;
+    padding: 5px;
 }
 
 body {
     color: black;
     background-color: white;
+    font-family: "Roboto";
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
@@ -24,34 +24,51 @@ p {
     width: 80%;
 }
 
-
 #site-title {
     text-decoration: none;
 }
 
-#nav {
-	list-style-type: none;
-	background-color: #ba2d65;
-    margin: 0;
-    padding: 0;
-}
+/****NAV BAR*****/
 
 #nav li {
-	display: inline;
-	padding: 10px;
-	margin: 5px;
+	float: left;
 }
 
-#nav a {
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ba2d65;
+    height: 70px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#nav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
 	text-decoration: none;
 	color: white;
 	font-size: 2em;
 }
 
-#nav li:hover {
+#nav a:hover {
 	background-color: lightcoral;
 }
 
+
+/***SITE CONTENT****/
+.link a {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    margin: 10px;
+}
 
 .content {
     max-width: 1200px;
@@ -82,7 +99,7 @@ p {
     flex: 1 400px;
     box-shadow: 10px 10px 9px rgba(0,0,0,.5);
     padding: 10px;
-    border: 3px solid black;
+    border: 3px solid lightpink;
     margin: 20px;
     background-color: #f7f3f5;
     color: black;
@@ -92,4 +109,13 @@ p {
     margin-left: auto;
     margin-right: auto;
     max-width: 950px;
+}
+
+
+.post-content a {
+    color: #ba2d65;
+}
+
+.post h2 {
+    color: #ba2d65;
 }
