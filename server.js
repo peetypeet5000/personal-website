@@ -25,6 +25,7 @@ app.use(express.static('public'));
 	//print req to console for tracking
 	var currDate = new Date;
 	console.log("== Request Received. IP:", req.ip, " Time:", currDate.toLocaleString(), " URL:", req.url);
+	next();
 });
 
 /**********************
@@ -55,10 +56,8 @@ app.get('*', function (req, res) {
 	});
 });
 
-//create server
-const httpServer = http.createServer(app);
 
 //start the server
-httpServer.listen(port, function () {
+app.listen(port, function () {
 	console.log("== HTTP Server is listening on port", port);
 });
