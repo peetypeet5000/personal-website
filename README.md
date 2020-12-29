@@ -6,11 +6,11 @@ This website was created to allow me to practice setting up a webserver from scr
 
 ### Requirements
 * Node.js installed on server
-* Root privlages to run on port 80 and 443
+* nginx server setup on host, setup as reverse proxy to this node server on port 3000
 
 ### Starting
 
-Once cloned, run `npm install` to install dependencies. After that, run normally with `npm start` or run `npm run dev` to run in nodemon. Both commands must be run with admin privilages.
+Once cloned, run `npm install` to install dependencies. After that, run normally with `npm start` or run `npm run dev` to run in nodemon. This will start the server on port 3000. Note that it is only an http server. It is recomended to use nginx or apache to setup a reverse proxy.
 
 
 ## Project Details
@@ -19,6 +19,7 @@ Once cloned, run `npm install` to install dependencies. After that, run normally
 * Express is used as the framework
 * Handlebars is used as the templating engine
 * All pages are generated from templates
+* Uses nginx reverse proxy to handle ssl/https
 
 
 ## Current Real-World Use

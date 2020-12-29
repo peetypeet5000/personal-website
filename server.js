@@ -5,6 +5,7 @@ var https = require('https');
 var express = require('express');
 var exphbs = require('express-handlebars');
 
+/*
 //grab ssl cert
 var privateKey = fs.readFileSync('cert/server.key', 'utf-8');
 var cert = fs.readFileSync('cert/server.crt', 'utf-8');
@@ -12,7 +13,7 @@ var httpsOptions = {
 	key: privateKey,
 	cert: cert
 };
-
+*/
 
 //setup express
 var app = express();
@@ -74,14 +75,15 @@ app.get('*', function (req, res) {
 
 //create servers
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(httpsOptions, app);
+//const httpsServer = https.createServer(httpsOptions, app);
 
 //start the server
-httpServer.listen(80, function () {
-	console.log("== HTTP Server is listening on port", 80);
+httpServer.listen(port, function () {
+	console.log("== HTTP Server is listening on port", port);
 });
 
+/*
 httpsServer.listen(443, function () {
 	console.log("== HTTPS Server is listening on port", 443);
 });
-
+*/
