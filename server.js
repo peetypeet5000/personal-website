@@ -5,16 +5,6 @@ var https = require('https');
 var express = require('express');
 var exphbs = require('express-handlebars');
 
-/*
-//grab ssl cert
-var privateKey = fs.readFileSync('cert/server.key', 'utf-8');
-var cert = fs.readFileSync('cert/server.crt', 'utf-8');
-var httpsOptions = {
-	key: privateKey,
-	cert: cert
-};
-*/
-
 //setup express
 var app = express();
 var port = 3000;
@@ -35,14 +25,6 @@ app.use(express.static('public'));
 	//print req to console for tracking
 	var currDate = new Date;
 	console.log("== Request Received. IP:", req.ip, " Time:", currDate.toLocaleString(), " URL:", req.url);
-
-	if (req.secure) {
-			// request was via https, so do no special handling
-			next();
-	} else {
-			// request was via http, so redirect to https
-			res.redirect('https://' + req.headers.host + req.url);
-	}
 });
 
 /**********************
@@ -73,17 +55,10 @@ app.get('*', function (req, res) {
 	});
 });
 
-//create servers
+//create server
 const httpServer = http.createServer(app);
-//const httpsServer = https.createServer(httpsOptions, app);
 
 //start the server
 httpServer.listen(port, function () {
 	console.log("== HTTP Server is listening on port", port);
 });
-
-/*
-httpsServer.listen(443, function () {
-	console.log("== HTTPS Server is listening on port", 443);
-});
-*/
