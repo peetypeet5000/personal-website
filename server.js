@@ -34,7 +34,7 @@ app.use(express.static('public'));
 	//print req to console for tracking
 	var currDate = new Date;
 	console.log("== Request Received. Time:", currDate.toLocaleString(), " URL:", req.url);
-	
+
 	if (req.secure) {
 			// request was via https, so do no special handling
 			next();
@@ -52,6 +52,14 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
 	res.status(200).render('index', {
 		title: "Index - Peter LaMontagne",
+	});
+});
+
+
+//serve the projects page
+app.get('/projects', function (req, res) {
+	res.status(200).render('projects', {
+		title: "Projects - Peter LaMontagne",
 	});
 });
 
