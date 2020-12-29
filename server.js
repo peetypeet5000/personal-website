@@ -33,7 +33,7 @@ app.use(express.static('public'));
  app.use (function (req, res, next) {
 	//print req to console for tracking
 	var currDate = new Date;
-	console.log("== Request Received. Time:", currDate.toLocaleString(), " URL:", req.url);
+	console.log("== Request Received. IP:", req.ip, " Time:", currDate.toLocaleString(), " URL:", req.url);
 
 	if (req.secure) {
 			// request was via https, so do no special handling
