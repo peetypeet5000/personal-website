@@ -18,7 +18,6 @@ Once cloned, run `npm install` to install dependencies. After that, run normally
 * Uses Node.js as server backend
 * Express is used as the framework
 * Handlebars is used as the templating engine
-* All pages are generated from templates
 * Uses nginx reverse proxy to handle ssl/https
 
 

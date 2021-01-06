@@ -15,9 +15,15 @@ body {
     color: black;
     background-color: white;
     font-family: "Roboto";
+    font-weight: 500;
+    font-size: 1em;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
+}
+
+h5 {
+    margin-bottom: 0;
 }
 
 
@@ -113,8 +119,26 @@ body {
 }
 
 
+
+.post-content-resume {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 950px;
+    width: 80%;
+}
+
+
 .post-element {
     flex: 1 400px;
+    padding: 10px;
+}
+
+
+.resume-element {
+    flex: 0 1 auto;
     padding: 10px;
 }
 
@@ -133,6 +157,12 @@ body {
 .post h2 {
     margin-top: 5px;
     color: #ba2d65;
+}
+
+
+.no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
