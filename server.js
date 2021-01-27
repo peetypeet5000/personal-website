@@ -35,7 +35,7 @@ app.use(express.static('public'));
 //serve the main page
 app.get('/', function (req, res) {
 	res.status(200).render('index', {
-		title: "Index - Peter LaMontagne",
+		title: "Peter LaMontagne",
 	});
 });
 
