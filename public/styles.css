@@ -21,7 +21,9 @@ Color Theme:
 
 
 *****************************/
-
+html {
+    scroll-behavior: smooth;
+}
 
 
 header h1 {
