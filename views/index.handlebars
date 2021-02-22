@@ -4,7 +4,7 @@
         <div class="post-content-resume">
             <div class="resume-element">
                 <h1>Peter LaMontagne</h1>
-                <p>8995 Sw Sunstead Lane, Portland OR 97225 | peter@peterlamontagne.com | (503) - 853 - 4419</p>
+                <p>8995 Sw Sunstead Lane, Portland OR 97225 | peter@peterlamontagne.com | (503) - 853 - 4419 | peterlamontagne.com</p>
             </div>
 
 
@@ -81,39 +81,9 @@
     </div>
 
     <section id="projects">
-        <div class="post">
-            <h2>Project 1: This Website</h2>
-
-            <div class="post-content">
-                <img class="post-image" src="rpi.jpg" alt="Image of Raspberry Pi Server">
-                <p class="post-text">This website is running on a Raspberry Pi Model 3b. It is currently set up using a 
-                    reverse-proxy nginx server, as this made setting up the certificate much easier. Behind this proxy server 
-                    is a couple node.js applications that serves all the website content. The content is served and templated using 
-                    express and handlebards, respectively. As the raspberry pi is sitting on my home network, a dynamic DNS needed 
-                    to be setup. To achive this, I used the DDNS built into Google Domains, as that is where my domain was purchased. 
-                    A script runs on the raspberry pi every hour to check if the IP address has changed and, if it did, it will update the 
-                    Google DDNS server. 
-                    <br><br>
-                    See the codebase for this website in my GitHub repo <a href="https://github.com/peetypeet5000/personal-website">here.</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="post">
-            <h2>Project 2: Websocket Tik Tak Toe</h2>
-
-            <div class="post-content">
-                <img class="post-image" src="tik.png" alt="Image of Raspberry Pi Server">
-                <p class="post-text">This project, initally created as the final project for CS290 - Web Development, uses Websockets to make a dynamic,
-                     multiplayer game of TikTakToe. In this game, the turns cycle in a queue-based system, in order of opening the webpage. The game continues
-                      until Tik wins, Tak wins, or there is a tie. The game allows dynamic joining and exiting of players, constant syncing of clients, and 
-                      a synced place-in-queue counter.<br><br>Play the game <a href="/tiktak">here.</a><br><br>See the codebase for this website in my GitHub repo
-                       <a href="https://github.com/peetypeet5000/ws-ticktaktoe">here.</a>
-            </p>
-            </div>
-
-        </div>
-        
+        {{#each projects}}
+            {{> projectCard}}
+        {{/each}}
     </section>
     
 </div>

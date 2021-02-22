@@ -5,6 +5,9 @@ var https = require('https');
 var express = require('express');
 var exphbs = require('express-handlebars');
 
+//get project JSON
+var projectData = require('./projects.json');
+
 //setup express
 var app = express();
 var port = 3000;
@@ -36,14 +39,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
 	res.status(200).render('index', {
 		title: "Peter LaMontagne",
-	});
-});
-
-
-//serve the projects page
-app.get('/projects', function (req, res) {
-	res.status(200).render('projects', {
-		title: "Projects - Peter LaMontagne",
+		projects: projectData
 	});
 });
 

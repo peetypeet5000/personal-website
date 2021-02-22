@@ -1,0 +1,15 @@
+<div class="post">
+    <h2>Project {{number}}: {{projectTitle}}</h2>
+
+    <div class="post-content">
+        <img class="post-image" src="{{projectImage}}" alt="{{projectImageAlt}}">
+        <p class="post-text">
+            {{projectDescription}}
+            {{#if extraContent}}
+                <br><br>Play the game <a href={{extraContent}}>here.</a>
+            {{/if}}
+            <br><br>
+            See the GitHub repo for this project <a href="{{projectGithub}}">here.</a>
+        </p>
+    </div>
+</div>
