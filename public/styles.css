@@ -105,6 +105,10 @@ h5 {
 
 /***SITE CONTENT****/
 
+.content img {
+    max-width: 100%;
+}
+
 .link a {
     width: 1000px;
     margin-left: auto;
@@ -155,6 +159,10 @@ h5 {
     margin: 20px;
     background-color: #222222;
     margin-bottom: 50px;
+}
+
+.no-padding {
+    padding: 0px;
 }
 
 .post-content {
@@ -220,6 +228,12 @@ h5 {
     color: #fe700e; 
 }
 
+
+.resume-photo {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 .post-content a {
