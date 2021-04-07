@@ -181,6 +181,12 @@ h5 {
 }
 
 
+.post-element img {
+    max-width: 350px;
+    padding-top: 10%;
+    max-height: 200px;
+}
+
 
 .post-text {
     flex: 2 1 400px;
